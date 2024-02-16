@@ -1,13 +1,17 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import Splash from "../Screens/Splash";
-import Home from "../Screens/Home";
+import { Home, Login, Splash } from "../Screens";
 
 const Navigator = createStackNavigator();
 const Stack = () => {
   return (
-    <Navigator.Navigator>
+    <Navigator.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       <Navigator.Screen name="Splash" component={Splash} />
       <Navigator.Screen name="Home" component={Home} />
+      <Navigator.Screen name="Login" component={Login} />
     </Navigator.Navigator>
   );
 };
