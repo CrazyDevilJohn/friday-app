@@ -19,7 +19,6 @@ const Splash = () => {
 
   return (
     <View className="w-full h-full bg-[#3A9DD4] justify-center items-center flex-col">
-      <StatusBar backgroundColor={"#3a9dd4"} barStyle={"dark-content"} />
       <Image source={LOGO} className="w-full" />
       <Text className="text-xl text-white font-semibold -mt-1">PICS POST</Text>
     </View>

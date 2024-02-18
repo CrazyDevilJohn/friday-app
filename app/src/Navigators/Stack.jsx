@@ -1,4 +1,7 @@
-import { createStackNavigator } from "@react-navigation/stack";
+import {
+  CardStyleInterpolators,
+  createStackNavigator,
+} from "@react-navigation/stack";
 import { Home, Login, Splash } from "../Screens";
 
 const Navigator = createStackNavigator();
@@ -7,6 +10,9 @@ const Stack = () => {
     <Navigator.Navigator
       screenOptions={{
         headerShown: false,
+        gestureEnabled: true,
+        gestureDirection: "horizontal",
+        cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
       }}
     >
       <Navigator.Screen name="Splash" component={Splash} />
