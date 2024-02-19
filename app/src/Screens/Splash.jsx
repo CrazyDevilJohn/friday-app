@@ -1,6 +1,5 @@
 import { View, Text, StatusBar, Image } from "react-native";
 import React, { useEffect, useState } from "react";
-import { LOGO } from "../../assets";
 import { useNavigation } from "@react-navigation/native";
 
 const Splash = () => {
@@ -18,9 +17,17 @@ const Splash = () => {
   }, []);
 
   return (
-    <View className="w-full h-full bg-[#3A9DD4] justify-center items-center flex-col">
-      <Image source={LOGO} className="w-full" />
-      <Text className="text-xl text-white font-semibold -mt-1">PICS POST</Text>
+    <View className="w-full h-full bg-white justify-center items-center">
+      <View className="w-300 h-300 bg-primaryOrange absolute rounded-full -top-24 -left-24" />
+      <View className="w-300 h-300 bg-primaryOrange absolute rounded-full -bottom-20 -right-14" />
+      <View>
+        <Text className="text-6xl text-center font-semibold text-primaryOrange">
+          Pix Post
+        </Text>
+        <Text className="text-xl text-center font-medium text-darkText">
+          By Friday
+        </Text>
+      </View>
     </View>
   );
 };

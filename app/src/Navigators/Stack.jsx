@@ -2,7 +2,7 @@ import {
   CardStyleInterpolators,
   createStackNavigator,
 } from "@react-navigation/stack";
-import { Home, Login, Splash } from "../Screens";
+import { Home, Login, Signup, Splash } from "../Screens";
 
 const Navigator = createStackNavigator();
 const Stack = () => {
@@ -18,6 +18,7 @@ const Stack = () => {
       <Navigator.Screen name="Splash" component={Splash} />
       <Navigator.Screen name="Home" component={Home} />
       <Navigator.Screen name="Login" component={Login} />
+      <Navigator.Screen name="Signup" component={Signup} />
     </Navigator.Navigator>
   );
 };
