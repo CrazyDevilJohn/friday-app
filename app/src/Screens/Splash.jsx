@@ -1,18 +1,14 @@
-import { View, Text, StatusBar, Image } from "react-native";
-import React, { useEffect, useState } from "react";
-import { useNavigation } from "@react-navigation/native";
+import { View, Text } from "react-native";
+import React, { useEffect } from "react";
 
-const Splash = () => {
-  const [isLogin, setIsLogin] = useState(false);
-  const navigation = useNavigation();
+const Splash = (props) => {
+  const {
+    navigation: { replace },
+  } = props;
 
   useEffect(() => {
     setTimeout(() => {
-      if (isLogin) {
-        navigation.navigate("Home");
-      } else {
-        navigation.navigate("Login");
-      }
+      replace("Home");
     }, 3000);
   }, []);
 

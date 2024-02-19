@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  Image,
+  ScrollView,
+} from "react-native";
 import { Feather } from "@expo/vector-icons";
 
 const Signup = (props) => {
@@ -12,7 +19,7 @@ const Signup = (props) => {
   return (
     <View className="w-full h-full bg-white">
       <View className="w-300 h-300 bg-primaryOrange rounded-full -top-24 -left-24" />
-      <View className="px-12 -mt-11">
+      <ScrollView className="px-12 -mt-11 pb-1">
         <Text className="text-xl font-medium text-darkText">Welcome!</Text>
         <Text className="text-2xl font-semibold text-black">Sign Up</Text>
 
@@ -45,7 +52,7 @@ const Signup = (props) => {
             </TouchableOpacity>
           </View>
         </View>
-      </View>
+      </ScrollView>
     </View>
   );
 };
