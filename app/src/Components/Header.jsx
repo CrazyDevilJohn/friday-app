@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { View, Text, StatusBar, Image, TouchableOpacity } from "react-native";
 import { BlurView } from "expo-blur";
 import { SimpleLineIcons } from "@expo/vector-icons";
 
 const Header = () => {
+  useEffect(() => {
+    StatusBar.setBarStyle("light-content");
+  }, []);
+
   return (
     <View className="w-full h-24">
       <BlurView

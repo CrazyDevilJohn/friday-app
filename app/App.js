@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import Stack from "./src/Navigators/Stack";
 import "react-native-gesture-handler";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { StatusBar } from "react-native";
 import { BottomTabs } from "./src/Navigators";
 
@@ -25,9 +26,11 @@ const App = () => {
   }, []);
   return (
     <NavigationContainer>
-      <Screens setRoute={setRoute} />
-      <Stack />
-      {route !== "Splash" && <BottomTabs activeScreen={route} />}
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <Screens setRoute={setRoute} />
+        <Stack />
+        {route !== "Splash" && <BottomTabs activeScreen={route} />}
+      </GestureHandlerRootView>
     </NavigationContainer>
   );
 };
