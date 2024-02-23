@@ -1,27 +1,32 @@
 import React, { useEffect } from "react";
 import { View, Text, StatusBar, Image, TouchableOpacity } from "react-native";
 import { BlurView } from "expo-blur";
-import { SimpleLineIcons } from "@expo/vector-icons";
+import { SimpleLineIcons, Ionicons } from "@expo/vector-icons";
 
-const Header = () => {
+const Header = ({ props }) => {
+  const { setIsDrawerOpen, isDrawerOpen } = props;
+
   useEffect(() => {
     StatusBar.setBarStyle("light-content");
   }, []);
 
   return (
     <View className="w-full h-24">
-      <BlurView
-        intensity={100}
-        tint="dark"
-        className="w-full h-full absolute top-0 left-0"
-      />
+      <View className="w-full h-full absolute top-0 left-0 bg-black opacity-70" />
       <View
         className="w-full h-full justify-between items-center p-3 flex-row"
         style={{ paddingTop: StatusBar.currentHeight + 10 || 20 }}
       >
         <View className="w-9 h-9 justify-center items-center">
-          <TouchableOpacity activeOpacity={0.7}>
-            <SimpleLineIcons name="menu" size={24} color="#fff" />
+          <TouchableOpacity
+            activeOpacity={0.7}
+            onPress={() => setIsDrawerOpen(true)}
+          >
+            {isDrawerOpen ? (
+              <Ionicons name="close-sharp" size={24} color="#fff" />
+            ) : (
+              <SimpleLineIcons name="menu" size={24} color="#fff" />
+            )}
           </TouchableOpacity>
         </View>
         <View className="p-1 border h-[35px] w-28 justify-center items-center rounded-xl border-white -left-20">
